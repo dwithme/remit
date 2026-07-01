@@ -67,3 +67,41 @@ model Verification {
   @@index([identifier])
   @@map("verification")
 }
+
+model Settings {
+  id                 String   @id @default("main")
+  xenditWebhookToken String?
+  emailWhitelist     String? // comma-separated email list
+  appMainWebhookUrl  String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@map("settings")
+}
+
+model App {
+  id         String        @id @default(cuid())
+  name       String
+  prefix     String        @unique
+  webhookUrl String
+  baseUrl    String
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+  txns       Transaction[]
+
+  @@map("app")
+}
+
+model Transaction {
+  id          String   @id @default(cuid())
+  appId       String
+  app         App      @relation(fields: [appId], references: [id], onDelete: Cascade)
+  externalId  String?
+  amount      Int?
+  status      String?
+  payloadJson Json?
+  createdAt   DateTime @default(now())
+
+  @@index([appId])
+  @@map("transaction")
+}

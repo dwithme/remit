@@ -1,8 +1,12 @@
 import { t } from "@/lib/trpc/trpc";
-import { helloRouter } from "./routes/hello";
+import { settingsRouter } from "./routes/settings";
+import { appsRouter } from "./routes/apps";
+import { analyticsRouter } from "./routes/analytics";
 
 export const appRouter = t.router({
-  hello: helloRouter,
+  settings: settingsRouter,
+  apps: appsRouter,
+  analytics: analyticsRouter,
 });
 
 export type AppRouter = typeof appRouter;
