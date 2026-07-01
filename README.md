@@ -8,6 +8,10 @@ Open-source admin dashboard for routing [Xendit](https://www.xendit.co/) webhook
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
+## Community
+
+- [Discord](https://discord.gg/7FBpTEXqVj)
+
 ## Features
 
 - **Google OAuth** login with optional email whitelist
