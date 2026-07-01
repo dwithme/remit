@@ -1,4 +1,6 @@
-# Xendit Dashboard
+# Remit
+
+![logo](./public/logo.png)
 
 Open-source admin dashboard for routing [Xendit](https://www.xendit.co/) webhooks to multiple downstream apps, tracking transactions, and managing payment ops from one place.
 
