@@ -44,8 +44,8 @@ Open-source admin dashboard for routing [Xendit](https://www.xendit.co/) webhook
 ### 1. Clone and install
 
 ```bash
-git clone https://github.com/devswithme/xendit-dashboard.git
-cd xendit-dashboard
+git clone https://github.com/devswithme/remit.git
+cd remit
 bun install   # or npm install / pnpm install
 ```
 
@@ -57,14 +57,14 @@ cp .env.example .env
 
 Fill in:
 
-| Variable | Description |
-|----------|-------------|
-| `DATABASE_URL` | PostgreSQL connection string (runtime) |
-| `DIRECT_URL` | PostgreSQL direct URL (migrations) |
-| `BETTER_AUTH_SECRET` | Random secret for sessions |
-| `BETTER_AUTH_URL` | App URL (e.g. `http://localhost:3000`) |
-| `GOOGLE_CLIENT_ID` | Google OAuth client ID |
-| `GOOGLE_CLIENT_SECRET` | Google OAuth client secret |
+| Variable               | Description                            |
+| ---------------------- | -------------------------------------- |
+| `DATABASE_URL`         | PostgreSQL connection string (runtime) |
+| `DIRECT_URL`           | PostgreSQL direct URL (migrations)     |
+| `BETTER_AUTH_SECRET`   | Random secret for sessions             |
+| `BETTER_AUTH_URL`      | App URL (e.g. `http://localhost:3000`) |
+| `GOOGLE_CLIENT_ID`     | Google OAuth client ID                 |
+| `GOOGLE_CLIENT_SECRET` | Google OAuth client secret             |
 
 ### 3. Database
 
@@ -95,12 +95,12 @@ Use the ngrok HTTPS URL + `/api/xendit/webhook` as your Xendit callback URL.
 
 ## API routes
 
-| Method | Path | Description |
-|--------|------|-------------|
-| `POST` | `/api/xendit/webhook` | Main Xendit webhook receiver |
+| Method | Path                             | Description                            |
+| ------ | -------------------------------- | -------------------------------------- |
+| `POST` | `/api/xendit/webhook`            | Main Xendit webhook receiver           |
 | `POST` | `/api/apps/:prefix/transactions` | Create a transaction record for an app |
-| `*` | `/api/trpc/*` | tRPC API (dashboard) |
-| `*` | `/api/auth/*` | better-auth endpoints |
+| `*`    | `/api/trpc/*`                    | tRPC API (dashboard)                   |
+| `*`    | `/api/auth/*`                    | better-auth endpoints                  |
 
 ## Project structure
 
